@@ -101,6 +101,7 @@ for sp = 1:numSNR
     BER(sp)     = BitError / (ntx * k);
     Iavg(sp)    = n_iter / ntx;
     NGavg(sp)   = NG / (ntx);
+    disp([' Blocks decoded   = ', num2str(ntx)]);
     disp([' BLER             = ', num2str(BLER(sp))]);
     disp([' BER              = ', num2str(BER(sp))]);
     disp([' NGavg            = ', num2str(NGavg(sp))]);    
