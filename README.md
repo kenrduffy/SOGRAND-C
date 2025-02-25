@@ -9,7 +9,7 @@ Install: mex -O SOGRAND_mex.c
 Four MATLAB sample simulations are included:
 
 1) sim_decoder executes OBRGAND decoding without using the SO.
-2) sim_product decodes product codes with SOGRAND as the component decoder. Rows and columns are processed in MATLAB and their decoding is not parallelized,
+2) sim_product decodes product codes with SOGRAND as the component decoder. Rows and columns are processed in MATLAB and their decoding is *not parallelized*.
 3) sim_blkSO_acc empirically evaluates the calibration, in the Brier Score sense, of the blockwise SO.
 4) sim_BLER_UER evaluates the SO control of undetected error rate.
 Output is recored in results.
@@ -26,6 +26,8 @@ K. Galligan, P. Yuan, M. Médard, K. R. Duffy. "Upgrade error detection to predi
 
 P. Yuan, M. Medard, K. Galligan, K. R. Duffy. "Soft-output (SO) GRAND and Iterative Decoding to Outperform LDPC Codes". IEEE Trans. Wireless Commun., 2025.
 
-Altough this OBRGRAND implementation is serial, the algorithm is highly parallelizable. E.g. A. Riaz, Y. Alperen, F. Ercan, W. An, J. Ngo, K. Galligan, M. Medard, K. R. Duffy, R. Yazicigil. "A sub-0.8-pJ/bit universal soft detection decoder using ORBGRAND,” IEEE J. Solid-State Circuits, 2025. Moreover, product code decoding is highly parallelizable, where all rows can be decoded in parallel and all columns can be decoded in parallel, but this is not exploited her.
+Altough the OBRGRAND implementation provided here is **not parallelized**, the algorithm istefl is *highly parallelizable*. E.g. A. Riaz, Y. Alperen, F. Ercan, W. An, J. Ngo, K. Galligan, M. Medard, K. R. Duffy, R. Yazicigil. "A sub-0.8-pJ/bit universal soft detection decoder using ORBGRAND,” IEEE J. Solid-State Circuits, 2025.
+
+Moreover, *product code decoding is highly parallelizable*, where all rows can be decoded in parallel and all columns can be decoded in parallel, but this is **not exploited here**.
 
 For further details on GRAND, see: https://www.granddecoder.mit.edu/
