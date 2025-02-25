@@ -86,12 +86,12 @@ for ntx = 1:maxIt
     llr = 2 * scal * y;
 
     % confidence
-    [chat, N_guess, p_correct, chat_list, p_inList] = SOGRAND_blkSO(llr, H, L, Tmax, Inf, even);
+    [~, ~, ~, chat_list, p_notinList] = SOGRAND_blkSO(llr, H, L, Tmax, Inf, even);
 
-    ind = ceil(-(log10(p_inList) / step));
+    ind = ceil(-(log10(p_notinList) / step));
     ind = max(1, ind);
     ind = min(ind, length(r));
-    n_p(ind) = n_p(ind) + p_inList;
+    n_p(ind) = n_p(ind) + p_notinList;
     n_sample(ind) = n_sample(ind) + 1;
 
     %

@@ -49,10 +49,10 @@ code_class  = 'CRC';
 % [G, H]      = getGH_sys_eBCH(n, k); % Extended BCH
 
 %% Decoder parameters
-L           = 2;
-Tmax        = Inf;
-thres       = Inf;
-p_e         = 0.05;
+L           = 2; % List size
+Tmax        = Inf; 
+thres       = Inf; % Always complete the list
+p_e         = 0.05; % Mark as reasure if prob. incorrect greater than this 
 %% Monte-Carlo parameters
 EbN0dB      = 1:0.5:6;
 NoErrors    = 20/p_e;
@@ -91,10 +91,10 @@ for sp = 1:numSNR
         y = x + randn([n, 1]);
         llr = 2 * scal * y;
 
-        [chat, N_guess, p_correct] = SOGRAND_blkSO(llr, H, L, Tmax, thres, even);
+        [chat, N_guess, p_incorrect] = SOGRAND_blkSO(llr, H, L, Tmax, thres, even);
         NG = NG + N_guess;
 
-        if p_correct > p_e
+        if p_incorrect > p_e
             flag = 0;
         else
             flag = 1;
