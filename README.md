@@ -8,7 +8,7 @@ Install: mex -O SOGRAND_mex.c
 
 Four MATLAB sample simulations are included:
 
-1) sim_decoder executes OBRGAND decoding without using the SO.
+1) sim_decoder executes OBRGRAND decoding without using the SO.
 2) sim_product decodes product codes with SOGRAND as the component decoder. Rows and columns are processed in MATLAB and their decoding is *not parallelized*.
 3) sim_blkSO_acc empirically evaluates the calibration, in the Brier Score sense, of the blockwise SO.
 4) sim_BLER_UER evaluates the SO control of undetected error rate.
