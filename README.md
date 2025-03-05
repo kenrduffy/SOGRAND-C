@@ -2,7 +2,8 @@
 
 Subject to license: "**GRAND Codebase Non-Commercial Academic Research Use License 021722.pdf**"
 
-Non-parallelized C implementation of **SOGRAND**: Soft Input Soft Output (SISO) GRAND (basic and 1-line SISO ORBGRAND) in mex format so it can be run from MATLAB.
+Non-parallelized C implementation of **SOGRAND**: 
+Soft Input Soft Output (SISO) GRAND (basic and 1-line SISO ORBGRAND) in mex format so it can be run from MATLAB.
 
 To compile, in MATLAB: mex -O SOGRAND_mex.c
 
